@@ -11,7 +11,7 @@ struct PokemonResponse: Codable {
     let results: [Pokemon]
 }
 
-struct Pokemon: Codable, Identifiable {
+struct Pokemon: Codable, Identifiable, Equatable {
     let name: String
     let url: String
     

@@ -22,7 +22,11 @@ class PokemonListViewModel: ObservableObject {
         self.repository = repository
     }
     
-    func loadPokemonList() {
+    func loadPokemonList(forceRefresh: Bool = false) {
+        if forceRefresh {
+            repository.clearCache()
+        }
+        
         // Reset state before loading
         pokemonList = []
         isLoading = false
